@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.util.Pair;
 import android.view.Menu;
@@ -11,17 +12,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.JokeWizard;
 import com.example.al.androidjokes.AndroidJokes;
 
+import java.util.concurrent.ExecutionException;
 
-public class MainActivity extends ActionBarActivity {
+
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
     }
 
 
@@ -43,19 +44,28 @@ public class MainActivity extends ActionBarActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
     public void tellJoke(View view){
-        JokeWizard joke = new JokeWizard();
+
+        String resultJoke="";
+
+        EndpointsAsyncTask asyncGetJOke = new EndpointsAsyncTask();
+        try {
+            resultJoke = asyncGetJOke.execute(new Pair<Context, String>(this, "")).get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
 
         Log.i("appMain", "AndoidLib");
         Intent jokeIntent = new Intent(this, AndroidJokes.class);
-        jokeIntent.putExtra("jokeExtra", joke.getJoke());
+        jokeIntent.putExtra("jokeExtra", resultJoke);
         startActivity(jokeIntent);
 
-        Toast.makeText(this, joke.getJoke(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, resultJoke, Toast.LENGTH_SHORT).show();
     }
 
 }
