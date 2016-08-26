@@ -13,7 +13,7 @@ import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 
 import java.io.IOException;
 
-import com.example.JokeWizard;
+
 
 /**
  * Created by Al on 2016-08-23.
@@ -44,10 +44,9 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
 
         context = params[0].first;
 //        String name = params[0].second;
-        JokeWizard joke = new JokeWizard();
 
         try {
-            return myApiService.sayHi(joke.getJoke()).execute().getData();
+            return myApiService.getJoke().execute().getData();
         } catch (IOException e) {
             return e.getMessage();
         }
