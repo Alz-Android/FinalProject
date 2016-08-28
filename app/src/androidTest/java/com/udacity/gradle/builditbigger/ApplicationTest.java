@@ -3,6 +3,7 @@ package com.udacity.gradle.builditbigger;
 import android.app.Application;
 import android.content.Context;
 import android.test.ApplicationTestCase;
+import android.util.Log;
 import android.util.Pair;
 
 import java.util.concurrent.ExecutionException;
@@ -24,6 +25,8 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
+        Log.i("AppTest",resultJoke);
         assertNotNull("Joke Not Found", resultJoke);
+        assertTrue("Joke is empty", !resultJoke.isEmpty());
     }
 }

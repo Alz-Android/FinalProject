@@ -5,9 +5,9 @@
       <configuration>
         <option name="HTTP_ADDRESS" value="localhost" />
         <option name="HTTP_PORT" value="8080" />
-        <option name="WAR_DIR" value="C:\Users\Al\Desktop\P4\ud867\FinalProject\jokeBackend\build\exploded-app" />
-        <option name="WEB_APP_DIR" value="C:\Users\Al\Desktop\P4\ud867\FinalProject\jokeBackend\src\main\webapp" />
-        <option name="APPENGINE_SDKROOT" value="C:\Users\Al\.gradle\appengine-sdk\appengine-java-sdk-1.9.28" />
+        <option name="WAR_DIR" value="C:\Users\Al\Desktop\p42\FinalProject\jokeBackend\build\exploded-app" />
+        <option name="WEB_APP_DIR" value="C:\Users\Al\Desktop\p42\FinalProject\jokeBackend\src\main\webapp" />
+        <option name="APPENGINE_SDKROOT" value="C:\Users\Al\.gradle\appengine-sdk\appengine-java-sdk-1.9.42" />
       </configuration>
     </facet>
     <facet type="android-gradle" name="Android-Gradle">
@@ -27,12 +27,12 @@
     <output-test url="file://$MODULE_DIR$/build/classes/test" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated-source/endpoints/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/endpointsSrc/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/functionalTest/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/functionalTest/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/functionalTest/resources" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
       <excludeFolder url="file://$MODULE_DIR$/.gradle" />
@@ -41,10 +41,11 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="jokewizard" exported="" />
-    <orderEntry type="library" exported="" name="appengine-endpoints-1.9.28" level="project" />
-    <orderEntry type="library" exported="" name="appengine-endpoints-deps-1.9.28" level="project" />
+    <orderEntry type="library" exported="" name="appengine-endpoints-1.9.42" level="project" />
     <orderEntry type="library" exported="" name="servlet-api-2.5" level="project" />
-    <orderEntry type="library" exported="" name="appengine-api-1.0-sdk-1.9.28" level="project" />
+    <orderEntry type="library" exported="" name="appengine-api-1.0-sdk-1.9.42" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="appengine-endpoints-deps-1.9.42" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="appengine-endpoints-deps-1.9.42" level="project" />
     <orderEntry type="library" exported="" name="jokeBackend.jokeBackend-android-endpoints" level="project" />
   </component>
 </module>
