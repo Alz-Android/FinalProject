@@ -27,5 +27,6 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         }
         Log.i("AppTest",resultJoke);
         assertNotNull("Joke Not Found", resultJoke);
+        assertTrue("Joke is empty", !resultJoke.isEmpty());
     }
 }
