@@ -12,7 +12,7 @@ import android.view.View;
 
 import com.example.al.androidjokes.AndroidJokes;
 import com.udacity.gradle.builditbigger.EndpointsAsyncTask;
-import com.udacity.gradle.builditbigger.paid.R;
+import com.udacity.gradle.builditbigger.R;
 
 import java.util.concurrent.ExecutionException;
 

@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.al.androidjokes.AndroidJokes;
 import com.udacity.gradle.builditbigger.EndpointsAsyncTask;
+import com.udacity.gradle.builditbigger.R;
 
 import java.util.concurrent.ExecutionException;
 
@@ -67,5 +68,4 @@ public class MainActivity extends AppCompatActivity {
 
      //   Toast.makeText(this, resultJoke, Toast.LENGTH_SHORT).show();
     }
-
 }
