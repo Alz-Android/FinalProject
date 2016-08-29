@@ -1,4 +1,4 @@
-package free;
+package com.udacity.gradle.builditbigger.free;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
