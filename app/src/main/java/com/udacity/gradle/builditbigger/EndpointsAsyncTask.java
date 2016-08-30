@@ -22,6 +22,11 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, S
     private static MyApi myApiService = null;
     private Context context;
 
+    private OnTaskCompleted taskCompleted;
+    public EndpointsAsyncTask(OnTaskCompleted activityContext){
+        this.taskCompleted = activityContext;
+    }
+
     @Override
     protected String doInBackground(Pair<Context, String>... params) {
         if(myApiService == null) {  // Only do this once
@@ -52,8 +57,8 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, S
         }
     }
 
-//    @Override
-//    protected void onPostExecute(String result) {
-//        Toast.makeText(context, result, Toast.LENGTH_LONG).show();
-//    }
+
+    protected void onPostExecute(String result){
+        taskCompleted.onTaskCompleted(result);
+    }
 }

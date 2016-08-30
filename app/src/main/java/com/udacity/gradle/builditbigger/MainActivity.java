@@ -11,13 +11,10 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.al.androidjokes.AndroidJokes;
-import com.udacity.gradle.builditbigger.EndpointsAsyncTask;
-import com.udacity.gradle.builditbigger.R;
-
 import java.util.concurrent.ExecutionException;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnTaskCompleted{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,23 +44,16 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void tellJoke(View view){
-
-        String resultJoke="";
-
-        EndpointsAsyncTask asyncGetJOke = new EndpointsAsyncTask();
-        try {
-            resultJoke = asyncGetJOke.execute(new Pair<Context, String>(this, "")).get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
-
+    @Override
+    public void onTaskCompleted(String resultJoke) {
         Log.i("appMain", "AndoidLib");
         Intent jokeIntent = new Intent(this, AndroidJokes.class);
         jokeIntent.putExtra("jokeExtra", resultJoke);
         startActivity(jokeIntent);
     }
 
+    public void tellJoke(View view){
+        EndpointsAsyncTask asyncGetJOke = new EndpointsAsyncTask(MainActivity.this);
+        asyncGetJOke.execute(new Pair<Context, String>(this, ""));
+    }
 }
