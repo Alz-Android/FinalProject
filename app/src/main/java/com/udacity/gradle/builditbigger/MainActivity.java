@@ -55,24 +55,5 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted{
     public void tellJoke(View view){
         EndpointsAsyncTask asyncGetJOke = new EndpointsAsyncTask(MainActivity.this);
         asyncGetJOke.execute(new Pair<Context, String>(this, ""));
-
-
-
-//        String resultJoke="";
-//
-//        EndpointsAsyncTask asyncGetJOke = new EndpointsAsyncTask();
-//        try {
-//            resultJoke = asyncGetJOke.execute(new Pair<Context, String>(this, "")).get();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        } catch (ExecutionException e) {
-//            e.printStackTrace();
-//        }
-//
-//        Log.i("appMain", "AndoidLib");
-//        Intent jokeIntent = new Intent(this, AndroidJokes.class);
-//        jokeIntent.putExtra("jokeExtra", resultJoke);
-//        startActivity(jokeIntent);
     }
-
 }
